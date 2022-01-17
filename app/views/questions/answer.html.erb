@@ -1,0 +1,21 @@
+<div class="mensaje">
+  <%=@answer%><br><p>-You</p>
+</div>
+<br>
+<% if @answer.downcase == "i am going to work" %>
+  <div class="mensaje">
+    <p>Great!</p>
+    <p>-Your coach</p>
+  </div>
+<% elsif @answer.downcase.end_with?('?')%>
+  <div class="mensaje">
+    <p>Silly question, get dressed and go to work!</p>
+    <p>-Your coach</p>
+  </div>
+<% else %>
+  <div class="mensaje">
+    <p>I don't care, get dressed and go to work!</p>
+    <p>-Your coach</p>
+  </div>
+<% end %>
+<%= link_to 'Ask a new question', ask_path %>
